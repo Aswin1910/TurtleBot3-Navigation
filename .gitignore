@@ -1,0 +1,12 @@
+# colcon build outputs
+tb3_nav_ws/build/
+tb3_nav_ws/install/
+tb3_nav_ws/log/
+# python
+__pycache__/
+*.pyc
+# editors / OS
+.vscode/
+*.swp
+Thumbs.db
+.DS_Store
