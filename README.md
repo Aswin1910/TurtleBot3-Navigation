@@ -37,7 +37,6 @@ bash setup.sh
 ```
 `setup.sh` installs `navigation2`, `nav2_bringup`, `nav2_minimal_tb3_sim` (the TurtleBot3 Waffle model for Gazebo Harmonic, maintained by the Nav2 team), `nav2_simple_commander` and `ros_gz`, then runs `colcon build`.
 
-> Tip: building under `/mnt/c/...` works but is slow. For better speed, copy `tb3_nav_ws` into your Linux home (`cp -r tb3_nav_ws ~/`) and build it there.
 
 ## 2. Launch the simulation and Nav2
 **Terminal 1**
@@ -57,12 +56,6 @@ source /opt/ros/jazzy/setup.bash
 source /mnt/c/Users/aswin/Documents/Robotics/tb3_nav_ws/install/setup.bash
 ros2 run tb3_nav2_sim send_goal.py            # default goal (4, 4): top-right corner
 ros2 run tb3_nav2_sim send_goal.py 3.5 -3 90  # x y yaw(deg)
-```
-
-**Option C: CLI.**
-```bash
-ros2 action send_goal /navigate_to_pose nav2_msgs/action/NavigateToPose \
-  "{pose: {header: {frame_id: map}, pose: {position: {x: 4.0, y: 4.0}, orientation: {w: 1.0}}}}" --feedback
 ```
 
 ### What you should see
